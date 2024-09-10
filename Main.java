@@ -7,10 +7,61 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.format("Scratch Pad using Java version %s%n", getJavaVersion());
+
+        checkXY(10, 5);
+
         calculateInvoiceUsingDouble();
         System.out.println("=================================");
         calculateInvoiceUsingBigDecimal();
 
+
+        print();
+        changeVar();
+        multDriver();
+
+        suchFun(1, 2, 3);
+        suchFun(1, 2, 1);
+        suchFun(1, 1, 3);
+        suchFun(1, 1, 1);
+
+      System.out.print("Area of triangle 3, 4, 5 is ");
+      System.out.println(Formula.findAreaTriangle(3, 4, 5));
+
+      System.out.print("Surface area of pyramid with w=3, len=5, slantH=10 is ");
+      System.out.println(Formula.pyramidSA(3, 5, 10));
+
+      /*
+      System.out.println( new RubberDuck() );
+      System.out.println( new RubberDuck("brown") );
+
+      RubberDuck rdg = new RubberDuck("green", 3);
+      System.out.println(rdg);
+      rdg.squeak(Integer.MAX_VALUE / 3);
+      System.out.print();
+      */
+
+    }
+
+    private static void checkXY(int x, int y) {
+    /*    if (x > 0 && (y / x) == 3)System.out.println("first case");
+        else System.out.println("second case");*/
+
+ /*       if (x == 0 || (y / x) == 3) System.out.println("first case");
+        else System.out.println("second case");*/
+
+        if (x % 2 == 0 && y % 2 == 0 || x > y)
+        {
+            System.out.print("First ");
+
+            if (y * 2 == x || y > 5 && x <= 10)
+            {
+                System.out.print("Second ");
+            }
+            else
+            {
+                System.out.print("Third ");
+            }
+        }
     }
 
     private static void calculateInvoiceUsingBigDecimal() {
@@ -47,6 +98,75 @@ public class Main {
         System.out.println("Sales Tax: " + currencyFormat.format(salesTax));
         System.out.println("Total: " + currencyFormat.format(result));
     }
+
+    /*
+        A RubberDuck party is successful when the number of jelly beans consumed
+        is between 40 and 60, inclusive, unless it is the weekend,
+        in which case there is no upper bound on the number of jelly beans.
+     */
+    public static boolean jellyParty(int n, boolean isWeekend) {
+      /*
+      return (n >=40 && n <= 60)
+          || (isWeekend && n >= 40);
+      */
+
+        if (isWeekend) return n >= 40;
+        return n >= 40 && n <= 60;
+
+    }
+
+    public static void modParams(int x, String str1, String str2) {
+        x++;
+        str1 = str1 + "BB";
+        str2 = "memory";
+    }
+
+    public static void changeVar() {
+        int a = 20;
+        int b = 3;
+        a++;
+        b += a;
+        System.out.println(a + ", " + b);
+    }
+
+    public static int mult(int x) {
+        return 4 * x;
+    }
+
+    public static void multDriver() {
+        int a = 3, b = 2;
+        a -= b;
+        b = mult(a);
+        System.out.println("a = " + a + ", b = " + b);
+    }
+
+    public static void suchFun(int a, int b, int c) {
+        if (a == b && b == c) {
+            System.out.println("boring");
+        } else if (a == b || a == c || b == c) {
+            System.out.println("twins");
+        } else {
+            System.out.println("unique");
+        }
+    }
+
+    public static void print()
+    {
+        int k = 1;
+        String s1 = "AA";
+        String s2 = "space";
+        modParams(k, s1, s2);
+        System.out.println(k + ", " + s1 + ", " + s2);
+
+        // one way to fix this is to have a class to hold and modify the variables:
+        Payload p = new Payload(k, s1, s2);
+        System.out.println(p);
+        p.modParams();
+        System.out.println("Using Payload helper class:");
+        System.out.println(p);
+    }
+
+
 
     /**
      * get the java version that is running the current program
