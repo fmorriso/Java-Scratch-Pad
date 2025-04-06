@@ -25,19 +25,19 @@ public class Main {
         suchFun(1, 1, 3);
         suchFun(1, 1, 1);
 
-      System.out.print("Area of triangle 3, 4, 5 is ");
-      System.out.println(Formula.findAreaTriangle(3, 4, 5));
+        System.out.print("Area of triangle 3, 4, 5 is ");
+        System.out.println(Formula.findAreaTriangle(3, 4, 5));
 
-      System.out.print("Surface area of pyramid with w=3, len=5, slantH=10 is ");
-      System.out.println(Formula.pyramidSA(3, 5, 10));
+        System.out.print("Surface area of pyramid with w=3, len=5, slantH=10 is ");
+        System.out.println(Formula.pyramidSA(3, 5, 10));
 
 
-      System.out.println( new RubberDuck() );
-      System.out.println( new RubberDuck("brown") );
+        System.out.println(new RubberDuck());
+        System.out.println(new RubberDuck("brown"));
 
-      RubberDuck rdg = new RubberDuck("green", 3);
-      System.out.println(rdg);
-      rdg.squeak(Integer.MAX_VALUE / 3);
+        RubberDuck rdg = new RubberDuck("green", 3);
+        System.out.println(rdg);
+        rdg.squeak(Integer.MAX_VALUE / 3);
 
     }
 
@@ -48,16 +48,12 @@ public class Main {
  /*       if (x == 0 || (y / x) == 3) System.out.println("first case");
         else System.out.println("second case");*/
 
-        if (x % 2 == 0 && y % 2 == 0 || x > y)
-        {
+        if (x % 2 == 0 && y % 2 == 0 || x > y) {
             System.out.print("First ");
 
-            if (y * 2 == x || y > 5 && x <= 10)
-            {
+            if (y * 2 == x || y > 5 && x <= 10) {
                 System.out.print("Second ");
-            }
-            else
-            {
+            } else {
                 System.out.print("Third ");
             }
         }
@@ -149,8 +145,7 @@ public class Main {
         }
     }
 
-    public static void print()
-    {
+    public static void print() {
         int k = 1;
         String s1 = "AA";
         String s2 = "space";
@@ -165,12 +160,11 @@ public class Main {
         System.out.println(p);
     }
 
-    public static void mystery(){
-        int[ ] arr = {-17,  -14,  3,  9,  21,  34};
+    public static void mystery() {
+        int[] arr = {-17, -14, 3, 9, 21, 34};
 
-        for (int i = 0; i < arr.length / 2; i += 2)
-        {
-            arr[i] = arr[i]  *  2;
+        for (int i = 0; i < arr.length / 2; i += 2) {
+            arr[i] = arr[i] * 2;
         }
 
         System.out.println(Arrays.toString(arr));
@@ -195,7 +189,6 @@ public class Main {
         Runtime.Version runTimeVersion = Runtime.version();
         return String.format("%s.%s.%s.%s", runTimeVersion.feature(), runTimeVersion.interim(), runTimeVersion.update(), runTimeVersion.patch());
     }
-
 
 
 }
