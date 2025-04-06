@@ -74,8 +74,10 @@ public class Main {
         result = result.setScale(2, RoundingMode.HALF_UP);
         System.out.println("Subtotal: " + total);
         System.out.println("Discount: " + discount);
+        beforeTax = total.subtract(discount);
         System.out.println("SubTotal after discount: " + beforeTax);
         System.out.println("Sales Tax: " + salesTax);
+        result = beforeTax.add(salesTax);
         System.out.println("Total: " + result);
     }
 
