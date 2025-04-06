@@ -1,6 +1,7 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
+import java.util.Arrays;
 
 public class Main {
 
@@ -30,15 +31,13 @@ public class Main {
       System.out.print("Surface area of pyramid with w=3, len=5, slantH=10 is ");
       System.out.println(Formula.pyramidSA(3, 5, 10));
 
-      /*
+
       System.out.println( new RubberDuck() );
       System.out.println( new RubberDuck("brown") );
 
       RubberDuck rdg = new RubberDuck("green", 3);
       System.out.println(rdg);
       rdg.squeak(Integer.MAX_VALUE / 3);
-      System.out.print();
-      */
 
     }
 
@@ -166,7 +165,26 @@ public class Main {
         System.out.println(p);
     }
 
+    public static void mystery(){
+        int[ ] arr = {-17,  -14,  3,  9,  21,  34};
 
+        for (int i = 0; i < arr.length / 2; i += 2)
+        {
+            arr[i] = arr[i]  *  2;
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private static void array2d() {
+        int square = 4;
+        int[][] board = new int[square][square];
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[row].length; col++) {
+                System.out.format("board[%d][%d] = %d%n", row, col, board[row][col]);
+            }
+        }
+    }
 
     /**
      * get the java version that is running the current program
@@ -177,5 +195,7 @@ public class Main {
         Runtime.Version runTimeVersion = Runtime.version();
         return String.format("%s.%s.%s.%s", runTimeVersion.feature(), runTimeVersion.interim(), runTimeVersion.update(), runTimeVersion.patch());
     }
+
+
 
 }
